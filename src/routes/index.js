@@ -7,7 +7,7 @@ import users from "./usersRoutes.js"
 import userscores from "./userScoresRoutes.js"
 
 const routes = (app) => {
-  app.route('/').get((req, res) => {
+  app.route('/').get((_req, res) => {
     res.status(200).send({titulo: "Curso de node"})
   })
 

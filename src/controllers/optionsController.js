@@ -6,7 +6,7 @@ class OptionController {
     const query = req.query
 
     options.find(query)
-      .exec((err, options) => {
+      .exec((_err, options) => {
         res.status(200).json(options)
   })
   }

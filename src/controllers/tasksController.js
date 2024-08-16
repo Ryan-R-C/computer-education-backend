@@ -20,7 +20,7 @@ class TaskController {
 
     task.find(query)
       .populate(this.subTasksPopulate)
-      .exec((err, task) => {
+      .exec((_err, task) => {
         res.status(200).json(task)
   })
   }

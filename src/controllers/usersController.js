@@ -6,7 +6,7 @@ class UserController {
     const query = req.query
 
     users.find(query)
-      .exec((err, users) => {
+      .exec((_err, users) => {
         res.status(200).json(users)
   })
   }

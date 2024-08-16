@@ -7,7 +7,7 @@ class SubtaskController {
 
     subtasks.find(query)
       .populate('options')
-      .exec((err, subtasks) => {
+      .exec((_err, subtasks) => {
         res.status(200).json(subtasks)
   })
   }

@@ -6,7 +6,7 @@ class UserScoreController {
     const query = req.query
 
     userScores.find(query)
-      .exec((err, userScores) => {
+      .exec((_err, userScores) => {
         res.status(200).json(userScores)
   })
   }
@@ -87,7 +87,7 @@ class UserScoreController {
           }
       },
       { upsert: true  }, 
-      ( (err, value) => {
+      ( (err) => {
         if(!err){
           res.status(200).send({message: 'UserScore created/updated successfully'})
         } else {
