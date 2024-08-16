@@ -4,6 +4,6 @@ const urlConnection = "mongodb+srv://ryan:Ryansp123@cluster0.dgsm3wt.mongodb.net
 
 mongoose.connect(urlConnection);
 
-let db = mongoose.connection;
+const db = mongoose.connection;
 
 export default db;

@@ -75,65 +75,12 @@ class TaskController {
     })
   }
 
-
-
-
-  // static listByUserScore = (req, res) => {
-  //   const userScoreId = req.params.id
-
-  //   console.log("---------------")
-  //   console.log("userScoreId")
-  //   console.log(userScoreId)
-  //   console.log("---------------")
-
-  //     task.aggregate([{
-  //         $lookup: {
-  //             from: userScore.collection.name, // collection name in db
-  //             localField: "_id",
-  //             foreignField: "task",
-  //             as: "userScore",
-  //         },
-  //     },
-  //     {
-  //       "$match": {
-  //         "$or": [
-  //           {
-  //             "userScore": []
-  //           },
-  //           {
-  //             "userScore.user": mongoose.Types.ObjectId(userScoreId)
-  //           },
-  //         ]
-  //       }
-  //     } 
-    
-  //   ])
-  //     .exec((err, task) => {
-  //       if(err) {
-  //         console.error(err)
-  //         res.status(400).send({message: `${err.message} - Id not not localized.`})
-  //       } else {
-  //         res.status(200).send(task);
-  //       }
-  //     })
-
-
-  // }
-
-
-
-
   static listByUserScore = (req, res) => {
     const userScoreId = req.params.id
 
-    console.log("---------------")
-    console.log("userScoreId")
-    console.log(userScoreId)
-    console.log("---------------")
-
       task.aggregate([{
           $lookup: {
-              from: userScore.collection.name, // collection name in db
+              from: userScore.collection.name,
               localField: "_id",
               foreignField: "task",
               as: "userScore",

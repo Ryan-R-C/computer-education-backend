@@ -11,8 +11,6 @@ class SubtaskController {
       }
     }
 
- 
-
   static listSubTasks = (req, res) => {
     const query = req.query
     
@@ -73,8 +71,6 @@ class SubtaskController {
       }
     })
   }
-
-
 }
 
 export default SubtaskController

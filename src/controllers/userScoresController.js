@@ -67,36 +67,7 @@ class UserScoreController {
 
     const { user, task, hits, misses, level} = body
     
-
-    // userScores.findByIdAndUpdate(
-    //   {
-    //     user: user,
-    //     task: task,
-    //   },
-    //   { 
-    //     $set: body
-    //   },
-    //   { upsert: true  }, 
-    //   ( (err) => {
-    //     if(!err){
-    //       res.status(200).send({message: 'UserScore created/updated successfully'})
-    //     } else {
-    //       res.status(500).send({message: err.message})
-    //     }
-    //   })
-    //   )
-      
-
-    // var newUserScore = new userScores(
-    //   {
-    //     user: user,
-    //     task: task,
-    //   },
-    // );
-
     if(body._id) delete body._id;
-    
-
 
 
     userScores.findOneAndUpdate(
@@ -117,7 +88,6 @@ class UserScoreController {
       },
       { upsert: true  }, 
       ( (err, value) => {
-        console.log(value)
         if(!err){
           res.status(200).send({message: 'UserScore created/updated successfully'})
         } else {
